@@ -1,0 +1,52 @@
+apiVersion: meta.pkg.crossplane.io/v1alpha1
+kind: Configuration
+metadata:
+  name: test
+  annotations:
+    meta.crossplane.io/maintainer: test
+    meta.crossplane.io/source: test
+spec:
+  crossplane:
+    version: ">=v1.14.1-0"
+  dependsOn:
+    # azure
+    - provider: xpkg.upbound.io/upbound/provider-family-azure
+      version: "v0.38.2"
+    - provider: xpkg.upbound.io/upbound/provider-azure-containerregistry
+      version: "v0.38.2"
+    - provider: xpkg.upbound.io/upbound/provider-azure-containerservice
+      version: "v0.38.2"
+    - provider: xpkg.upbound.io/upbound/provider-azure-storage
+      version: "v0.38.2"
+    - provider: xpkg.upbound.io/upbound/provider-azure-keyvault
+      version: "v0.38.2"
+    - provider: xpkg.upbound.io/upbound/provider-azure-logz
+      version: "v0.38.2"
+    - provider: xpkg.upbound.io/upbound/provider-azure-network
+      version: "v0.38.2"
+    - provider: xpkg.upbound.io/upbound/provider-azure-managedidentity
+      version: "v0.38.2"
+    - provider: xpkg.upbound.io/upbound/provider-azure-operationalinsights
+      version: "v0.38.2"
+    - provider: xpkg.upbound.io/upbound/provider-azure-insights
+      version: "v0.38.2"
+    - provider: xpkg.upbound.io/upbound/provider-azure-authorization
+      version: "v0.38.2"
+    # aws
+    - provider: xpkg.upbound.io/upbound/provider-family-aws
+      version: "v0.44.0"
+    - provider: xpkg.upbound.io/upbound/provider-aws-ec2
+      version: "v0.44.0"
+    - provider: xpkg.upbound.io/upbound/provider-aws-eks
+      version: "v0.44.0"
+    - provider: xpkg.upbound.io/upbound/provider-aws-iam
+      version: "v0.44.0"
+    # kubernetes
+    - provider: xpkg.upbound.io/crossplane-contrib/provider-kubernetes
+      version: "v0.9.0"
+    # helm
+    - provider: xpkg.upbound.io/crossplane-contrib/provider-helm
+      version: "v0.16.0"
+    # functions
+    - function: xpkg.upbound.io/crossplane-contrib/function-patch-and-transform
+      version: "v0.2.1"

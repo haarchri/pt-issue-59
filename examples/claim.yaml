@@ -1,0 +1,11 @@
+apiVersion: platform.haarchri.io/v1alpha1
+kind: Cluster
+metadata:
+  name: test-aks
+  namespace: default
+spec:
+  compositeDeletePolicy: Foreground
+  parameters:
+    region: westeurope
+  writeConnectionSecretToRef:
+    name: test-aks
